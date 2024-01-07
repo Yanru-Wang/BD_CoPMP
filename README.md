@@ -6,11 +6,19 @@ This repository contains instances of testset T1, T2, T3 of the paper "Benders d
 
 Function `GetData(param)` in `read_data.jl` returns a demand vector `vec_h` and a distance matrix `mat_d`.
 
+There are 40 data files (i.e., 20 instances) in `./dataset1`.
+The file naming convention in this test case library (`./dataset1`) follows the format "ds1_D_1000_1.conpmp" / "ds1_H_1000_1.conpmp". 
+Here's a breakdown of the components:
+
+- "ds1": Indicates that it belongs to dataset 1.
+- "D": Represents the distance information, and "H": Represents the demand information.
+- "1000": Indicates the number of customers in this instance.
+- "1": Represents the first randomly generated instance.
 
 ### Testset 1
 
-An example to obtain the first generated data of size 3000 in testset T1: 
-`julia read_data.jl testset=1 fname_demand=./dataset1_test/ds1_H_300_1.conpmp fname_distance=./dataset1_test/ds1_D_300_1.conpmp`
+> An example to obtain the first generated data of size 3000 in testset T1:
+> `julia read_data.jl testset=1 fname_demand=./dataset1_test/ds1_H_300_1.conpmp fname_distance=./dataset1_test/ds1_D_300_1.conpmp`
 
 
 ### Testset 2 and Testset 3
