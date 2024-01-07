@@ -19,6 +19,8 @@ The 2010 census data of 3221 counties in the USA is available at `https://www2.c
 and the 2010 census data of 29514 Census Designated Places (CDPs) in the USA is available at `https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_places_national.zip`.
 
 Notice that instances in testset T2 and T3 are obtained by collecting the requested number of items of counties / places of the highest polulations from source data files. Thus the size of instances is need as an input.
-An example to obtain an instance of size 1000 in teset T2: `julia read_data.jl testset=2 fname_real=Gaz_counties_national.txt size=1000`
-An example to obtain an instance of size 5000 in teset T3: `julia read_data.jl testset=3 fname_real=Gaz_places_national.txt size=5000`
+
+> An example to obtain an instance of size 1000 in teset T2: `julia read_data.jl testset=2 fname_real=Gaz_counties_national.txt size=1000`
+
+> An example to obtain an instance of size 5000 in teset T3: `julia read_data.jl testset=3 fname_real=Gaz_places_national.txt size=5000`
 
