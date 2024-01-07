@@ -1,14 +1,13 @@
-"""
-    ReadDemand(fname_h)
-Brief:
-   read data (demand) from a file
-Param:
-- fname_h::String                name of the demand file
-
-Return:
-- vec_h::Vector{Float64}         vector to store the demand of each customer
-"""
 function ReadDemand(fname_h)
+"""
+    Read data (demand) from a file
+
+    Arguments:
+        - fname_h: name of the demand file
+
+    Returns:
+        - vec_h: demand vector
+"""
     println("   @ Read Demand File: ", fname_h)
 
     data = readlines(fname_h)
@@ -25,17 +24,16 @@ function ReadDemand(fname_h)
     return vec_h
 end
 
-"""
-    ReadDistance(fname_d)
-Brief:
-   read data (distance) from a file
-Param:
-- fname_d::String                name of the distance file
-
-Return:
-- mat_d::Matrix{Float64}         matrix to store the demand of each customer
-"""
 function ReadDistance(fname_d)
+"""
+   Read data (distance) from a file
+   
+    Arguments:
+        - fname_d: name of the distance file
+
+    Returns:
+        - mat_d: distance matrix
+"""
     println("   @ Read Distance File: ", fname_d)
 
     data = readlines(fname_d)
@@ -56,20 +54,20 @@ function ReadDistance(fname_d)
     return mat_d
 end
 
-"""
-   GetDistance(latA, latB, longA, longB)
-Brief:
-   calculate distance (km) between coordinates
-Param:
-- latA::Float64         latitude of point A
-- latB::Float64         latitude of point B
-- longA::Float64        longtitude of point A
-- longB::Float64        longtitude of point B
-
-Return:
-- dist::Float64         distance between coordinates
-"""
 function GetDistance(latA, latB, longA, longB)
+
+"""
+    Calculate distance (km) from coordinates.
+
+    Arguments:
+        - latA: latitude of point A
+        - latB: latitude of point B
+        - longA: longtitude of point A
+        - longB: longtitude of point B
+
+    Returns:
+        - dist::Float64         distance between coordinates
+"""
     # earch radius is 6371.001 km on average
     Radius = 6371
     # calculate the distance
@@ -81,30 +79,24 @@ function GetDistance(latA, latB, longA, longB)
     return dist
 end
 
-"""
-    rad(theta_arc)
-Brief:
-   convert Degrees to Radians
-Param:
-- theta_deg::Float64          angle measured in degrees
-"""
+# convert Degrees to Radians
 rad(theta_deg) = theta_deg * pi / 180
 
-"""
-    GetData_Dependent(fname, m, isSorted)
-Brief:
-   extract the demand and distance of the m most populous places from source data 
-Param:
-- fname::String               filename of source data
-- m::Int64                    number of places to be extracted
-- isSorted::Bool              whether the demands are sorted or not
 
-Return:
-- vec_h::Vector{Float64}      vector to store the demand of each customer
-- mat_d::Matrix{Float64}      matrix to store the distances for each pair of customers and facilities
-"""
 function GetData_Dependent(fname, m, isSorted=false)
 
+"""
+    Extract the demand and distance of the m most populous places from source data.
+
+    Arguments:
+        - fname: filename of source data
+        - m: number of places to be extracted
+        - isSorted: whether the demands are sorted or not
+
+    Returns:
+        - vec_h: demand vector
+        - mat_d: distance matrix
+"""
     data = readlines(fname)
 
     ndata = length(data) - 1
