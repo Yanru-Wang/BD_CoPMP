@@ -15,9 +15,9 @@ Here's a breakdown of the components:
 - "1000": Indicates the number of customers, which is also the number of facilities,  in this instance.
 - "1": Represents the first randomly generated instance.
 
-> The format of demand files (e.g., "T1_H_1000_1.copmp") is:
-line 1: number of customers
-line 2 to the end of file: the index of customer and the demand of customer
+> The format of demand files (e.g., "T1_H_1000_1.copmp") is:     
+line 1: number of customers     
+line 2 to the end of file: the index of customer and the demand of customer   
 
 > The format of distance files (e.g., "T1_D_1000_1.copmp") is:   
 line 1: number of customers, number of facilities, number of distances for each pair of customer and facility     
