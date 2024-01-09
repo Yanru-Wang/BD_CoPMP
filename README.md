@@ -39,17 +39,10 @@ Sorce data of testset T3, i.e., the 2010 census data of 29514 Census Designated 
 Function `GetData(param)` in `read_data.jl` returns a demand vector `vec_h` ($\{h_i\}$) and a distance matrix `mat_d` ($\{d_{ij}\}$).
 
 Running `read_data.jl` gives the corresponding instance file. 
-> The format of the resulting instance file:        
-> line 1: the demand of each customer.     
-> line i + 1: the distance of customer i to each facility (i = 1, ..., n). n is the size of the instance. 
-
-### Testset 1
-
-> A (linux) command line example to obtain the first generated data of size 300 in testset T1:
-```julia
-julia read_data.jl testset=1 fname_demand=./testset1/T1_H_300_1.copmp fname_distance=./testset1/T1_D_300_1.copmp
-```
-
+> The format of the resulting instance file:   
+> line 1: number of customers, Dmax, p, H
+> line 2: the demand of each customer.     
+> line i + 2: the distance of customer i to each facility (i = 1, ..., n). n is the size of the instance.
 
 ### Testset 2 and Testset 3
 
@@ -69,11 +62,11 @@ the demand $h_i$, $i \in \[n\]$ is the set as the population of the correspondin
 
 A (linux) command line example example to obtain the instance of size 1000 in teset T2: 
 ```julia 
-julia read_data.jl testset=2 fname_real=./Gaz_counties_national.txt size=1000
+julia read_data.jl testset=2 fname_real=./Gaz_counties_national.txt n=1000 Dmax=130 p=10 gamma=0.2
 ```
 
 A (linux) command line example example to obtain the instance of size 5000 in teset T3: 
 ```julia
-julia read_data.jl testset=3 fname_real=./Gaz_places_national.txt size=5000
+julia read_data.jl testset=3 fname_real=./Gaz_places_national.txt n=5000 Dmax=50 p=100 gamma=0.2
 ```
 

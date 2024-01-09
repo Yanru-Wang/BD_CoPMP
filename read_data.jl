@@ -63,7 +63,7 @@ for i in eachindex(ARGS)
         param.fname_distance = str[2]
     elseif str[1] == "fname_real"
         param.fname_real = str[2]
-    elseif str[1] == "m"
+    elseif str[1] == "n"
         param.size = parse(Int, str[2])
     elseif str[1] == "Dmax"
         global Dmax += parse(Int, str[2])
