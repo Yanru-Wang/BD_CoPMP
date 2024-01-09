@@ -11,7 +11,7 @@ There are 60 instance files in `./T1`.
 The file naming convention in this test case library (`./T1`) follows the format "T1_1000_12_15_0.2_1.copmp". 
 Here's a breakdown of the components:
 
-- "T1": indicates that it belongs to testset 1.
+- "T1": indicates that it belongs to testset T1.
 - "1000": indicates both the number of customers and the number of facilities are equal to 1000.
 - "12": indicates the distance $D_{\text{max}}$, i.e., the maximum covering distance.
 - "15": indicates the number of open facilities $p$.
