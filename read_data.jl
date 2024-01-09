@@ -48,7 +48,10 @@ end
 
 param = Param(0, "", "", "", 0)
 
-saveFname = ""
+gamma = 0.0
+Dmax = 0
+p = 0
+num = 0
 
 for i in eachindex(ARGS)
     str = split(ARGS[i], "=")
@@ -56,24 +59,65 @@ for i in eachindex(ARGS)
         param.testset = parse(Int, str[2])
     elseif str[1] == "fname_demand"
         param.fname_demand = str[2]
-        m = match(r"(T1_H_[0-9]+_[0-9].copmp)", str[2])
-        println(str[2])
-        name = split(m.match, "_")
-        global saveFname = name[1] * "_" * name[3] * "_" * name[4]
     elseif str[1] == "fname_distance"
         param.fname_distance = str[2]
     elseif str[1] == "fname_real"
         param.fname_real = str[2]
-        global saveFname = "T" * string(param.testset) * "_"
-    elseif str[1] == "size"
+    elseif str[1] == "m"
         param.size = parse(Int, str[2])
-        global saveFname *= str[2] * ".copmp"
+    elseif str[1] == "Dmax"
+        global Dmax += parse(Int, str[2])
+    elseif str[1] == "p"
+        global  p += parse(Int, str[2])
+    elseif str[1] == "gamma"
+        global gamma += parse(Float64, str[2])
+    elseif str[1] == "num"
+        global num = parse(Int, str[2])
     end
 end
+
+saveFname = ""
+if param.testset == 1
+    m = match(r"(T1_H_[0-9]+_[0-9].copmp)", param.fname_demand)
+    name = split(m.match, "_")
+    name[4] = split(name[4], ".")[1]
+    saveFname = name[1] * "_" * name[3] * "_" * string(Dmax) * "_" * string(p) * "_" * string(gamma) * "_" * name[4] * ".copmp"
+else
+    saveFname = "T" * string(param.testset) * "_" * string(param.size) * "_" * string(Dmax) * "_" * string(p) * "_" * string(gamma) * ".copmp"
+end
+
+paraset = ""
+if param.testset == 1
+    paraset = "T1.set"
+elseif param.testset == 2
+    paraset = "T2.set"
+elseif param.testset == 3
+    paraset = "T3.set"
+end
+
+H = 0
+lines = readlines(paraset)
+for line in lines[2:end]
+    str = split(line, " ", keepempty=false)
+    if paraset == "T1.set"
+        if str[1] == string(param.size) * "-" * string(num) && str[2] == string(Dmax) && str[3] == string(p)
+            global H = gamma * parse(Float64, str[4]) + (1 - gamma) * parse(Float64, str[5])
+            break
+        end
+    else
+        if str[1] == string(param.size) && str[2] == string(Dmax) && str[3] == string(p)
+            global H = gamma * parse(Float64, str[4]) + (1 - gamma) * parse(Float64, str[5])
+            break
+        end
+    end
+end
+
+H = round(H, digits=1)
 
 vec_h, mat_d = GetData(param)
 
 open(saveFname, "w") do f
+    write(f, "$(param.size) $(Dmax) $(p) $H\n")
     for h in vec_h
         write(f, "$h ")
     end
