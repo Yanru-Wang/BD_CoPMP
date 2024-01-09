@@ -27,9 +27,7 @@ As an example, for T1_1000_12_15_0.2_1.copmp,
 ### Testsets T2 and T3
 
 
-The instances of Testsets T2 and T3 are constructed from which were constructed based on the real-world data.
-
---- 
+The instances of Testsets T2 and T3 are constructed from which were constructed based on the real-world data:
 
 The 2010 census data of 3221 counties in the USA, which is available at
 https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_counties_national.zip
