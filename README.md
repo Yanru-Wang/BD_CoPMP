@@ -38,9 +38,10 @@ Sorce data of testset T3, i.e., the 2010 census data of 29514 Census Designated 
 
 Function `GetData(param)` in `read_data.jl` returns a demand vector `vec_h` ($\{h_i\}$) and a distance matrix `mat_d` ($\{d_{ij}\}$).
 
-Running `read_data.jl` gives the corresponding instance file, where    
-line 1: the demand of each customer.       
-line i + 1: the distance of customer i to each facility (i = 1, ..., n). n is the size of the instance. 
+Running `read_data.jl` gives the corresponding instance file. 
+> The format of the resulting instance file:     
+> line 1: the demand of each customer.
+> line i + 1: the distance of customer i to each facility (i = 1, ..., n). n is the size of the instance. 
 
 ### Testset 1
 
