@@ -41,7 +41,7 @@ https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_places_national.zi
 ---
 
 We use `read_data.jl` the construct the instances in Testsets T2 and T3.      
-For example, to obtain instance T2_1000_130_10_0.2.copmp, run the code:
+For example, to obtain instance T2_1000_130_10_0.2.copmp, we can run the code:
 
 ```julia 
 julia read_data.jl testset=2 fname_real=./Gaz_counties_national.txt s=1000 Dmax=130 p=10 w=0.2
