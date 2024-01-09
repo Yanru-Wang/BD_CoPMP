@@ -1,6 +1,6 @@
 # BD_CoPMP
 
-This repository contains instances of testset T1, T2, T3 of the paper "Benders decomposition for coverage constrained $p$-median problems" by Yan-Ru Wang, Jie Liang, Cheng-Yang Yu, Wei Lv, Wei-Kun Chen, and Yu-Hong Dai.
+This repository contains instances of testsets T1, T2, and T3 of the paper "Benders decomposition for coverage constrained $p$-median problems" by Yan-Ru Wang, Jie Liang, Cheng-Yang Yu, Wei Lv, Wei-Kun Chen, and Yu-Hong Dai.
 
 
 In all instances of testsets T1, T2, and T3, the number of customers and facilities are set to be equal.
@@ -38,7 +38,7 @@ Running `read_data.jl` gives the corresponding CoPMP instance file.
 > line i + 2: the distance of customer i to each facility (i = 1, ..., n). n is the size of the instance.
 
 
-> Suppose we have `Gaz_counties_national.txt` and `Gaz_places_national.txt` (after uncompressing) at current directory (`BD_CoPMP/`).
+> Suppose files `Gaz_counties_national.txt` and `Gaz_places_national.txt` (after being uncompressed) exist at current directory (`BD_CoPMP/`).
 
 A (linux) command line example example to obtain the instance of size 1000 in teset T2: 
 ```julia 
