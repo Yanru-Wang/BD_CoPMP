@@ -12,7 +12,7 @@ The file naming convention in this test case library (`./T1`) follows the format
 Here's a breakdown of the components:
 
 - "T1": indicates that it belongs to testset 1.
-- "1000": indicates both the number of customers and the number of facilities.
+- "1000": indicates both the number of customers and the number of facilities are equal to 1000.
 - "12": indicates the distance $D_{\text{max}}$, i.e., the maximum covering distance.
 - "15": indicates the number of open facilities $p$.
 - "0.2": indicates the value of weight $w$, i.e., how large the maximum uncovered demand $H$ is.
