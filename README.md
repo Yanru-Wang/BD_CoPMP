@@ -22,7 +22,7 @@ As an example, for T1_1000_12_15_0.2_1.copmp,
 - "12" is the maximum covering distance;
 - "15" is the number of open facilities;
 - "0.2" is the weight reflecting how large the maximum uncovered demand is;
-- "1" is the instance number (there are 5 instances for each parameters (s, Dmax, p, w).
+- "1" is the instance number (there are 5 instances for each parameters (s, Dmax, p, w)).
 
 
 ### Testsets T2 and T3
