@@ -7,7 +7,7 @@ In all instances of testsets T1, T2, and T3, the number of customers and facilit
 
 The format of the instance file:
 > line 1: number of customers $n$, maximum covering distance $D_{\text{max}}$, number of open facilities $p$, maximum uncovered demand $H$.  
-> line 2: the demand of each customer.     
+> line 2: the demand of all customers.     
 > line i + 2: the distance of customer i to each facility (i = 1, ..., n). 
 
 ### Testset T1 
