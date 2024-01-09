@@ -27,7 +27,7 @@ As an example, for T1_1000_12_15_0.2_1.copmp,
 ### Testsets T2 and T3
 
 
-Testsets T2 and T3: the instances of Testsets T2 and T3 are constructed from which were constructed based on the real-world data.
+The instances of Testsets T2 and T3 are constructed from which were constructed based on the real-world data.
 
 --- 
 
