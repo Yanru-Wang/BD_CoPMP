@@ -40,7 +40,7 @@ Function `GetData(param)` in `read_data.jl` returns a demand vector `vec_h` ($\{
 
 Running `read_data.jl` gives the corresponding instance file. 
 > The format of the resulting instance file:   
-> line 1: number of customers, Dmax, p, H
+> line 1: number of customers, Dmax, p, H.  
 > line 2: the demand of each customer.     
 > line i + 2: the distance of customer i to each facility (i = 1, ..., n). n is the size of the instance.
 
