@@ -13,7 +13,7 @@ Here's a breakdown of the components:
 
 - "T1": indicates that it belongs to testset T1.
 - "1000": indicates both the number of customers and the number of facilities are equal to 1000.
-- "12": indicates the distance $D_{\text{max}}$, i.e., the maximum covering distance.
+- "12": indicates the maximum covering distance $D_{\text{max}}$.
 - "15": indicates the number of open facilities $p$.
 - "0.2": indicates the value of weight $w$, i.e., how large the maximum uncovered demand $H$ is.
 - "1": Represents the first randomly generated instance.
