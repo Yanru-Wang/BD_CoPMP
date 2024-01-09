@@ -13,7 +13,7 @@ The format of the instance file:
 ### Testset T1 
 
 There are 60 instance files in `./T1`.
-The file naming convention in this test case library (`./T1`) follows the format Tx_s_$D_{\text{max}}$_p_w[_num].copmp. 
+The file naming convention in this test case library (`./T1`) follows the format T1_s_Dmax_p_w_num.copmp. 
 As an example, for T1_1000_12_15_0.2_1.copmp,
 
 - "T1": indicates that it belongs to testset T1;
@@ -35,16 +35,14 @@ https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_counties_national.
 The 2010 census data of 29514 Census Designated Places (CDPs) in the USA, which is available at
 https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_places_national.zip.
 
+`T2.set` and `T3.set` contain the information of maximum uncovered demand H corresponding to the instances T2_s_Dmax_p_w.copmp and T3_s_Dmax_p_w.copmp.
+
 ---
 
-A (linux) command line example to obtain the instance of size 1000, Dmax 130, p 10 and gamma 0.2 in testset T2: 
+We use read_data.jl the construct the instances in Testsets T2 and T3.      
+For example, to obtain instance `T2_1000_130_10_0.2.copmp`, run the code:
+
 ```julia 
 julia read_data.jl testset=2 fname_real=./Gaz_counties_national.txt n=1000 Dmax=130 p=10 gamma=0.2
 ```
-Then you can obtain an instance file naming `T2_1000_130_10_0.2.copmp`.
 
-A (linux) command line example to obtain the instance of size 5000, Dmax 50, p 100 and gamma 0.2 in testset T3: 
-```julia
-julia read_data.jl testset=3 fname_real=./Gaz_places_national.txt n=5000 Dmax=50 p=100 gamma=0.2
-```
-Then you can obtain an instance file naming `T3_5000_50_100_0.2.copmp`.
