@@ -2,7 +2,7 @@ using Printf
 include("./utilities.jl")
 
 
-# julia read_data.jl testset=1 fname_demand=testset1/ds1_H_300_1.copmp fname_distance=testset1/ds1_D_300_1.copmp
+# julia read_data.jl testset=1 fname_demand=testset1/T1_H_300_1.copmp fname_distance=testset1/T1_D_300_1.copmp
 # julia read_data.jl testset=2 fname_real=Gaz_counties_national.txt size=1000
 # julia read_data.jl testset=3 fname_real=Gaz_places_national.txt size=5000
 
