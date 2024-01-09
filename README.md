@@ -4,20 +4,22 @@ This repository contains instances of testset T1, T2, T3 of the paper "Benders d
 
 ## Source Data Files
 
-There are 40 data files (i.e., 20 instances) in `./dataset1`.
-The file naming convention in this test case library (`./dataset1`) follows the format "ds1_D_1000_1.conpmp" / "ds1_H_1000_1.conpmp". 
+- In all instances of testsets T1, T2, and T3, the number of customers and facilities are set to be equal.
+
+There are 40 data files (i.e., 20 instances) in `./testset1`.
+The file naming convention in this test case library (`./testset1`) follows the format "T1_D_1000_1.copmp" / "T1_H_1000_1.copmp". 
 Here's a breakdown of the components:
 
-- "ds1": Indicates that it belongs to dataset 1.
+- "T1": Indicates that it belongs to testset 1.
 - "D": Represents the distance information, and "H": Represents the demand information.
-- "1000": Indicates the number of customers in this instance.
+- "1000": Indicates the number of customers, which is also the number of facilities,  in this instance.
 - "1": Represents the first randomly generated instance.
 
-> The format of demand files (e.g., "ds1_H_1000_1.conpmp") is:   
+> The format of demand files (e.g., "T1_H_1000_1.copmp") is:   
 number of customers   
 for each customer: the index of customer and the demand of customer
 
-> The format of distance files (e.g., "ds1_D_1000_1.conpmp") is:   
+> The format of distance files (e.g., "T1_D_1000_1.copmp") is:   
 number of customers, number of facilities, number of distances for each pair of customer and facility     
 for each pair of customer and facility: the index of customer, the index of facility, and the distance between customer and facility    
 
@@ -39,7 +41,7 @@ Function `GetData(param)` in `read_data.jl` returns a demand vector `vec_h` and 
 
 > A command line example to obtain the first generated data of size 3000 in testset T1:
 ```julia
-julia read_data.jl testset=1 fname_demand=./dataset1_test/ds1_H_300_1.conpmp fname_distance=./dataset1_test/ds1_D_300_1.conpmp
+julia read_data.jl testset=1 fname_demand=./testset1_test/T1_H_300_1.copmp fname_distance=./testset1_test/T1_D_300_1.copmp
 ```
 
 
