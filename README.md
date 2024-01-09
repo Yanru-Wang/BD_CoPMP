@@ -13,8 +13,8 @@ The format of the instance file:
 ### Testset T1 
 
 There are 60 instance files in `./T1`.
-The file naming convention in this test case library (`./T1`) follows the format `Tx_s_$D_{\text{max}}$_p_w[_num].copmp`. 
-Here's a breakdown of the components:
+The file naming convention in this test case library (`./T1`) follows the format Tx_s_$D_{\text{max}}$_p_w[_num].copmp. 
+As an example, for T1_1000_12_15_0.2_1.copmp,
 
 - "T1": indicates that it belongs to testset T1;
 - "1000": indicates both the number of customers and the number of facilities are equal to 1000;
@@ -26,16 +26,18 @@ Here's a breakdown of the components:
 
 ### Testsets T2 and T3
 
+
+Testsets T2 and T3: the instances of Testsets T2 and T3 are constructed from which were constructed based on the real-world data.
+
 --- 
 
-Source data of testset T2, i.e., the 2010 census data of 3221 counties in the USA is available at https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_counties_national.zip
+The 2010 census data of 3221 counties in the USA, which is available at
+https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_counties_national.zip
 
-Source data of testset T3, i.e., the 2010 census data of 29514 Census Designated Places (CDPs) in the USA is available at https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_places_national.zip.
-
+The 2010 census data of 29514 Census Designated Places (CDPs) in the USA, which is available at
+https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_places_national.zip.
 
 ---
-
-> Suppose files `Gaz_counties_national.txt` and `Gaz_places_national.txt` (after being uncompressed) exist at current directory (`BD_CoPMP/`).
 
 A (linux) command line example to obtain the instance of size 1000, Dmax 130, p 10 and gamma 0.2 in testset T2: 
 ```julia 
