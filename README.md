@@ -6,22 +6,16 @@ This repository contains instances of testset T1, T2, T3 of the paper "Benders d
 
 - In all instances of testsets T1, T2, and T3, the number of customers and facilities are set to be equal.
 
-There are 40 data files (i.e., 20 instances) in `./testset1`.
-The file naming convention in this test case library (`./testset1`) follows the format "T1_D_1000_1.copmp" / "T1_H_1000_1.copmp". 
+There are 60 instance files in `./T1`.
+The file naming convention in this test case library (`./T1`) follows the format "T1_1000_12_15_0.2_1.copmp". 
 Here's a breakdown of the components:
 
 - "T1": Indicates that it belongs to testset 1.
-- "D": Represents the distance information, and "H": Represents the demand information.
 - "1000": Indicates the number of customers, which is also the number of facilities,  in this instance.
-- "1": Represents the first randomly generated instance.
-
-> The format of demand files (e.g., "T1_H_1000_1.copmp") is:     
-line 1: number of customers     
-line 2 to the end of file: the index of customer and the demand of customer   
-
-> The format of distance files (e.g., "T1_D_1000_1.copmp") is:   
-line 1: number of customers, number of facilities, number of distances for each pair of customer and facility     
-line 2 to the end of file: the index of customer, the index of facility, and the distance between customer and facility    
+- "12": 
+- "15":
+- "0.2":
+- "1": Represents the first randomly generated instance.  
 
 
 --- 
