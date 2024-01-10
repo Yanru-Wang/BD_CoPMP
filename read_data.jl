@@ -63,13 +63,13 @@ for i in eachindex(ARGS)
         param.fname_distance = str[2]
     elseif str[1] == "fname_real"
         param.fname_real = str[2]
-    elseif str[1] == "n"
+    elseif str[1] == "s"
         param.size = parse(Int, str[2])
     elseif str[1] == "Dmax"
         global Dmax += parse(Int, str[2])
     elseif str[1] == "p"
         global  p += parse(Int, str[2])
-    elseif str[1] == "gamma"
+    elseif str[1] == "w"
         global gamma += parse(Float64, str[2])
     elseif str[1] == "num"
         global num = parse(Int, str[2])
@@ -90,26 +90,33 @@ paraset = ""
 if param.testset == 1
     paraset = "T1.set"
 elseif param.testset == 2
-    paraset = "T2.set"
+    paraset = "T2-H.txt"
 elseif param.testset == 3
-    paraset = "T3.set"
+    paraset = "T3-H.txt"
 end
 
 H = 0
 lines = readlines(paraset)
+flag = false
 for line in lines[2:end]
     str = split(line, " ", keepempty=false)
     if paraset == "T1.set"
         if str[1] == string(param.size) * "-" * string(num) && str[2] == string(Dmax) && str[3] == string(p)
             global H = gamma * parse(Float64, str[4]) + (1 - gamma) * parse(Float64, str[5])
+            global flag = true
             break
         end
     else
-        if str[1] == string(param.size) && str[2] == string(Dmax) && str[3] == string(p)
-            global H = gamma * parse(Float64, str[4]) + (1 - gamma) * parse(Float64, str[5])
+        if str[1] == string(param.size) && str[2] == string(Dmax) && str[3] == string(p) && str[4] == string(gamma)
+            global H = parse(Float64, str[5])
+            global flag = true
             break
         end
     end
+end
+if !flag
+    println("Error: no such instance in the parameter set!")
+    exit(0)
 end
 
 H = round(H, digits=1)
