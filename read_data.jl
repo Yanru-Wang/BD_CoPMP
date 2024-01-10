@@ -48,7 +48,7 @@ end
 
 param = Param(0, "", "", "", 0)
 
-gamma = 0.0
+w = 0.0
 Dmax = 0
 p = 0
 num = 0
@@ -70,7 +70,7 @@ for i in eachindex(ARGS)
     elseif str[1] == "p"
         global  p += parse(Int, str[2])
     elseif str[1] == "w"
-        global gamma += parse(Float64, str[2])
+        global w += parse(Float64, str[2])
     elseif str[1] == "num"
         global num = parse(Int, str[2])
     end
@@ -81,9 +81,9 @@ if param.testset == 1
     m = match(r"(T1_H_[0-9]+_[0-9].copmp)", param.fname_demand)
     name = split(m.match, "_")
     name[4] = split(name[4], ".")[1]
-    saveFname = name[1] * "_" * name[3] * "_" * string(Dmax) * "_" * string(p) * "_" * string(gamma) * "_" * name[4] * ".copmp"
+    saveFname = name[1] * "_" * name[3] * "_" * string(Dmax) * "_" * string(p) * "_" * string(w) * "_" * name[4] * ".copmp"
 else
-    saveFname = "T" * string(param.testset) * "_" * string(param.size) * "_" * string(Dmax) * "_" * string(p) * "_" * string(gamma) * ".copmp"
+    saveFname = "T" * string(param.testset) * "_" * string(param.size) * "_" * string(Dmax) * "_" * string(p) * "_" * string(w) * ".copmp"
 end
 
 paraset = ""
@@ -102,12 +102,12 @@ for line in lines[2:end]
     str = split(line, " ", keepempty=false)
     if paraset == "T1.set"
         if str[1] == string(param.size) * "-" * string(num) && str[2] == string(Dmax) && str[3] == string(p)
-            global H = gamma * parse(Float64, str[4]) + (1 - gamma) * parse(Float64, str[5])
+            global H = w * parse(Float64, str[4]) + (1 - w) * parse(Float64, str[5])
             global flag = true
             break
         end
     else
-        if str[1] == string(param.size) && str[2] == string(Dmax) && str[3] == string(p) && str[4] == string(gamma)
+        if str[1] == string(param.size) && str[2] == string(Dmax) && str[3] == string(p) && str[4] == string(w)
             global H = parse(Float64, str[5])
             global flag = true
             break

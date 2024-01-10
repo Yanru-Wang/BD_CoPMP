@@ -36,7 +36,7 @@ https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_counties_national.
 The 2010 census data of 29514 Census Designated Places (CDPs) in the USA, which is available at
 https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_places_national.zip.
 
-`T2.set` and `T3.set` contain the information of maximum uncovered demand H corresponding to the instances T2_s_Dmax_p_w.copmp and T3_s_Dmax_p_w.copmp.
+`T2-H.txt` and `T3-H.txt` contain the information of maximum uncovered demand H corresponding to the instances T2_s_Dmax_p_w.copmp and T3_s_Dmax_p_w.copmp.
 
 ---
 
