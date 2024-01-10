@@ -119,14 +119,14 @@ if !flag
     exit(0)
 end
 
-H = round(H, digits=1)
+H = floor(Int, round(H, digits=1))
 
 vec_h, mat_d = GetData(param)
 
 open(saveFname, "w") do f
     write(f, "$(param.size) $(Dmax) $(p) $H\n")
     for h in vec_h
-        write(f, "$h ")
+        write(f, "$(Int(h)) ")
     end
     write(f, "\n")
     for i in 1:length(vec_h)
